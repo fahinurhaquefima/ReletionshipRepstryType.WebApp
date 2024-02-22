@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ReletionshipRepstryType.WebApp.ViewModel.StateVm>
+@{
+    int idNo = 1;
+}
+<div class=" container">
+    <table class=" table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Country Name</th>
+                <th>State Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@idNo</td>
+                    <td>@item.Country.Name</td>
+                    <td>@item.Name</td>
+                   
+                </tr>
+                idNo++;
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Country Name</th>
+                <th>State Name</th>
+                <th>Action</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

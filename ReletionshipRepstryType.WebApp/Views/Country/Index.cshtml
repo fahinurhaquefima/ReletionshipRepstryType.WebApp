@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ReletionshipRepstryType.WebApp.ViewModel.CountryVm>
+@{
+    int idNo = 1;
+}
+    
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">CountryName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@idNo</td>
+                <td>@item.Name</td>
+                <td>
+                    <a class=" btn btn-sm btn-primary" asp-action="CreateOrEdit" asp-controller="Country" asp-route-id="@item.Id">Edit</a>
+
+                    |<a class=" btn btn-sm btn-primary" asp-action="CreateOrEdit" asp-controller="Country" asp-route-id="@item.Id">Details</a>
+
+                    <a class=" btn btn-sm btn-danger" asp-action="Delete" asp-controller="Country" asp-route-id="@item.Id" onclick="return alert('Are you sure! you delete this?')">Delete</a>
+                </td>
+            </tr>
+            idNo++;
+        }
+
+    </tbody>
+</table>
